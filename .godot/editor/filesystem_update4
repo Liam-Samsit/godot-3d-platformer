@@ -1,0 +1,9 @@
+res://level_1.tscn
+res://Resources/level_1_env.tres
+res://Resources/world-blocks-v1.tres
+res://assets/models/coin_new.res
+res://steve.gd
+res://steve.tscn
+res://coin.tscn
+res://block.tscn
+res://coin.gd

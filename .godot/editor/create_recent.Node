@@ -1,0 +1,15 @@
+AnimationPlayer
+CollisionShape3D
+Area3D
+RayCast3D
+MeshInstance3D
+GridMap
+Node3D
+Camera3D
+DirectionalLight3D
+WorldEnvironment
+Sprite3D
+CharacterBody3D
+TextEdit
+Label
+RigidBody3D
