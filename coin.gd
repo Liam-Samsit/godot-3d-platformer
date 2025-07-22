@@ -1,6 +1,7 @@
 extends Area3D
 
 const SPEED = 2 # the number of degrees the coin rotates every frame
+@export var hud : CanvasLayer
 var bop = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +19,10 @@ func _on_body_entered(body: Node3D) -> void:
 	$AnimationPlayer.play("bounce")
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(1,false)
+	Global.coins += 1
+	hud.get_node("CoinsLabel").text = str(Global.coins) + "/" + str(Global.COINS_TO_WIN)
+	if Global.coins >= Global.COINS_TO_WIN:
+		get_tree().change_scene_to_file("res://level_1.tscn")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

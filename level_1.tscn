@@ -1,35 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbqh7aqqcpbct"]
+[gd_scene load_steps=9 format=3 uid="uid://bbqh7aqqcpbct"]
 
 [ext_resource type="PackedScene" uid="uid://by83x33xfgerl" path="res://block.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://yvshtppsocrn" path="res://level_1.gd" id="1_5hph3"]
 [ext_resource type="PackedScene" uid="uid://b1gu2y3dbcxv2" path="res://steve.tscn" id="2_hbghi"]
 [ext_resource type="Environment" uid="uid://wduemx5rwlso" path="res://Resources/level_1_env.tres" id="4_ihfcg"]
 [ext_resource type="MeshLibrary" uid="uid://d3pukk6bk2gth" path="res://Resources/world-blocks-v1.tres" id="5_5hph3"]
 [ext_resource type="PackedScene" uid="uid://cbtrblm3pullt" path="res://coin.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://baylrvxsj43aj" path="res://hud.tscn" id="7_j7kpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rka8t"]
 size = Vector3(70.5528, 1, 53.0881)
 
 [node name="Level1" type="Node3D"]
-
-[node name="Blocks" type="Node3D" parent="."]
-
-[node name="Block1" parent="Blocks" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.5, 0, 0.866025, -0.224144, 0.965926, 0.12941, -0.836516, -0.258819, 0.482963, 0, 3, 0)
-
-[node name="Block2" parent="Blocks" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.5, -7.19671e-09, 0.866025, 0.229497, 0.964248, -0.1325, -0.835063, 0.265001, 0.482124, 0, 4.69775, 0.284865)
-
-[node name="Block3" parent="Blocks" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.457286, 0.100409, 0.883633, -0.412353, 0.904281, 0.110641, -0.787943, -0.414963, 0.454919, 3.32339, 4.69775, -2.48867)
+script = ExtResource("1_5hph3")
 
 [node name="Steve" parent="." instance=ExtResource("2_hbghi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69087, 2.36106)
-
-[node name="Coin1" parent="." instance=ExtResource("5_rka8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
-
-[node name="Coin2" parent="." instance=ExtResource("5_rka8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_ihfcg")
@@ -55,5 +41,40 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3048, 0, 1.95859)
 shape = SubResource("BoxShape3D_rka8t")
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="Coin3" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 4, -7.07148)
+hud = NodePath("../../HUD")
+
+[node name="Coin5" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6924, 5.38577, -3.80941)
+hud = NodePath("../../HUD")
+
+[node name="Coin4" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -4)
+hud = NodePath("../../HUD")
+
+[node name="Coin1" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+hud = NodePath("../../HUD")
+
+[node name="Coin2" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
+hud = NodePath("../../HUD")
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block1" parent="Blocks" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.5, 0, 0.866025, -0.224144, 0.965926, 0.12941, -0.836516, -0.258819, 0.482963, 0, 3, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.5, -7.19671e-09, 0.866025, 0.229497, 0.964248, -0.1325, -0.835063, 0.265001, 0.482124, 0, 4.69775, 0.284865)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.457286, 0.100409, 0.883633, -0.412353, 0.904281, 0.110641, -0.787943, -0.414963, 0.454919, 3.32339, 4.69775, -2.48867)
+
+[node name="HUD" parent="." instance=ExtResource("7_j7kpp")]
 
 [connection signal="body_entered" from="FallZone" to="Steve" method="_on_fall_zone_body_entered"]
