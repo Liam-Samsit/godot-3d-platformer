@@ -1,10 +1,6 @@
-res://hud.tscn
+res://steve.tscn
 res://Resources/level_1_env.tres
 res://Resources/world-blocks-v1.tres
 res://assets/models/coin_new.res
+res://steve.gd
 res://level_1.tscn
-res://steve.tscn
-res://coin.tscn
-res://hud.gd
-res://coin.gd
-res://level_1.gd
