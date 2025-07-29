@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbqh7aqqcpbct"]
+[gd_scene load_steps=10 format=3 uid="uid://bbqh7aqqcpbct"]
 
 [ext_resource type="PackedScene" uid="uid://by83x33xfgerl" path="res://block.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://yvshtppsocrn" path="res://level_1.gd" id="1_5hph3"]
@@ -7,6 +7,7 @@
 [ext_resource type="MeshLibrary" uid="uid://d3pukk6bk2gth" path="res://Resources/world-blocks-v1.tres" id="5_5hph3"]
 [ext_resource type="PackedScene" uid="uid://cbtrblm3pullt" path="res://coin.tscn" id="5_rka8t"]
 [ext_resource type="PackedScene" uid="uid://baylrvxsj43aj" path="res://hud.tscn" id="7_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://bwqdb0pcqecps" path="res://enemy.tscn" id="8_bjebc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rka8t"]
 size = Vector3(70.5528, 1, 53.0881)
@@ -75,5 +76,18 @@ transform = Transform3D(0.5, -7.19671e-09, 0.866025, 0.229497, 0.964248, -0.1325
 transform = Transform3D(0.457286, 0.100409, 0.883633, -0.412353, 0.904281, 0.110641, -0.787943, -0.414963, 0.454919, 3.32339, 4.69775, -2.48867)
 
 [node name="HUD" parent="." instance=ExtResource("7_j7kpp")]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("8_bjebc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0.3, 0)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("8_bjebc")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2, 0.3, 4)
+direction = Vector3(-1, 0, 0)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("8_bjebc")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 16, 1.5, 6)
+direction = Vector3(0, 0, -1)
 
 [connection signal="body_entered" from="FallZone" to="Steve" method="_on_fall_zone_body_entered"]
