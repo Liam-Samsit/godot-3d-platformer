@@ -97,6 +97,7 @@ bind/1/pose = Transform3D(1, 6.95617e-08, 2.28045e-07, -7.10543e-15, 0.956491, -
 [sub_resource type="Animation" id="Animation_iixeu"]
 resource_name = "blob"
 length = 0.833333
+loop_mode = 1
 tracks/0/type = "scale_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -187,8 +188,8 @@ bones/1/name = "FaceBone"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, -7.10543e-15, -2.38419e-07, 6.95617e-08, 0.956491, 0.291763, 2.28045e-07, -0.291763, 0.956491, 0, 1.2925, 0.862106)
 bones/1/enabled = true
-bones/1/position = Vector3(0, 1.2925, 0.862106)
-bones/1/rotation = Quaternion(-0.147495, -1.17905e-07, 1.75827e-08, 0.989063)
+bones/1/position = Vector3(1.86266e-09, 1.31547, 0.911313)
+bones/1/rotation = Quaternion(-0.11366, -1.18437e-07, 1.35494e-08, 0.99352)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D"]
@@ -199,6 +200,7 @@ skin = SubResource("Skin_7k104")
 libraries = {
 &"": SubResource("AnimationLibrary_ojgvu")
 }
+autoplay = "blob"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00684381, 0)
