@@ -1,6 +1,8 @@
-res://enemy.tscn
+res://level_1.tscn
 res://Resources/level_1_env.tres
 res://Resources/world-blocks-v1.tres
 res://assets/models/coin_new.res
-res://level_1.tscn
+res://enemy.tscn
+res://enemy.gd
 res://steve.tscn
+res://steve.gd
