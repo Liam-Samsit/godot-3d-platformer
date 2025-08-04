@@ -80,5 +80,5 @@ func _on_fall_zone_body_entered(body: Node3D) -> void:
 	
 
 func bounce():
-	velocity.y = JUMP_VELOCITY*0.5
+	velocity.y = JUMP_VELOCITY*2.5
 	

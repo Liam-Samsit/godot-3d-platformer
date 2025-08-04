@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 var speed = 3.0
 @export var direction := Vector3(1,0,0)
+@export var cliff_detection := true
 var turning := false
 
 func _physics_process(delta: float) -> void:
@@ -17,7 +18,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_wall() && !turning:
-		
+		turn_around()
+	if not $RayCast3D.is_colliding() and is_on_floor() && !turning && cliff_detection:
 		turn_around()
 		
 		

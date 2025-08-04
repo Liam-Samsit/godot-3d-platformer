@@ -2,7 +2,9 @@ res://level_1.tscn
 res://Resources/level_1_env.tres
 res://Resources/world-blocks-v1.tres
 res://assets/models/coin_new.res
+res://steve.tscn
 res://enemy.tscn
 res://enemy.gd
-res://steve.tscn
 res://steve.gd
+res://platform_2x_2.tscn
+res://platform_2x_2.gd
