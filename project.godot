@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="platformer3D"
+run/main_scene="uid://d1l58ifbhljss"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://global.gd"
+SoundManager="*res://sound_manager.tscn"
 
 [input]
 

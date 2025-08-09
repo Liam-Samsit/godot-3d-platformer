@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1l58ifbhljss"]
+
+[ext_resource type="Script" uid="uid://c3as3b3o5phtb" path="res://menu_title.gd" id="1_5cs7u"]
+[ext_resource type="FontFile" uid="uid://bnb4ne1xgggxd" path="res://assets/fonts/determination.ttf" id="1_n3opb"]
+[ext_resource type="Texture2D" uid="uid://i6xus3q00qru" path="res://assets/images/scarybot.png" id="2_5cs7u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3opb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuTitle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5cs7u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 1170.0
+offset_bottom = 670.0
+color = Color(0.143698, 0.0939161, 0.14443, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 31.0
+offset_right = 952.0
+offset_bottom = 206.0
+rotation = 0.0486171
+theme_override_colors/font_color = Color(0.922889, 0.772875, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.676613, 0.000135729, 0.601458, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_n3opb")
+theme_override_font_sizes/font_size = 64
+text = "ROBO THINGY"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -197.0
+offset_right = 956.0
+offset_bottom = 648.0
+texture = ExtResource("2_5cs7u")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 194.0
+offset_right = 987.0
+offset_bottom = 262.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.89888, 0.75826, 3.85046e-07, 1)
+theme_override_colors/font_pressed_color = Color(0.579256, 0.187157, 4.81308e-08, 1)
+theme_override_fonts/font = ExtResource("1_n3opb")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_n3opb")
+text = "PLAY"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

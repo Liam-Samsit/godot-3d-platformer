@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfhsh8qhvron6"]
+
+[ext_resource type="Script" uid="uid://b3i7oq8f0dtka" path="res://menu_win.gd" id="1_crd58"]
+[ext_resource type="Texture2D" uid="uid://bqcre0fvl4hki" path="res://assets/images/greenbot.png" id="2_crd58"]
+[ext_resource type="FontFile" uid="uid://bnb4ne1xgggxd" path="res://assets/fonts/determination.ttf" id="3_tc0l5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvwja"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="MenuWin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crd58")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 1163.0
+offset_bottom = 660.0
+color = Color(1.54018e-06, 0.383484, 0.190097, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -312.0
+offset_top = -56.0
+offset_right = 856.0
+offset_bottom = 777.0
+texture = ExtResource("2_crd58")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 152.0
+offset_right = 958.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(0.823558, 0.656137, 1.15514e-06, 1)
+theme_override_fonts/font = ExtResource("3_tc0l5")
+theme_override_font_sizes/font_size = 88
+text = "YOU WON!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 312.0
+offset_right = 920.0
+offset_bottom = 400.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.874443, 0.717854, 7.70092e-07, 1)
+theme_override_colors/font_pressed_color = Color(0.532723, 0.151396, 4.81308e-08, 1)
+theme_override_fonts/font = ExtResource("3_tc0l5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvwja")
+text = "Main Menu"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
